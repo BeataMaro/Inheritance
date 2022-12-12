@@ -1,7 +1,7 @@
 // IntBuilder ES6
 
 class IntBuilder {
-  constructor(int) {
+  constructor(int = 0) {
     this.int = int;
   }
 
@@ -31,15 +31,20 @@ class IntBuilder {
   get() {
     return this.int;
   }
+  // static method; from, to: integer; values limits the range of random values; 
+  static random(from, to) {
+    return Math.floor(Math.random() * (to - from) + from)
+  }   
 }
 
-const intBuilder = new IntBuilder(100);
+const intBuilder = new IntBuilder();
 console.log(intBuilder.plus(1, 2, 3));
 console.log(intBuilder.minus(90));
 console.log(intBuilder.multiply(3));
 console.log(intBuilder.divide(2));
 console.log(intBuilder.mod(24));
 console.log(intBuilder.get());
+console.log(IntBuilder.random(20, 50));
 
 //*****
 // StringBuilder ES5
